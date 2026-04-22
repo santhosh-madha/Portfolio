@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ExternalLink, Calendar, Award, CheckCircle2 } from 'lucide-react';
+import { BookOpen, ExternalLink, Calendar, Award } from 'lucide-react';
 
 const Research = () => {
   const publications = [
@@ -9,113 +9,102 @@ const Research = () => {
       venue: "Springer Nature, ICCIS 2024",
       desc: "Developed a hybrid acoustic feature extraction framework combining Multi-Fractal Detrended Fluctuation Analysis (MFDFA) with linear features for voice-based cancer detection.",
       highlights: [
-        "Improved classification accuracy by 3% over traditional feature sets",
-        "Outperformed standard OpenSMILE features with a reduced feature set",
-        "Validated on Saarbruecken Voice Database for clinical and remote applications"
+        "Improved classification accuracy by 3% over traditional methods",
+        "Outperformed standard OpenSMILE features",
+        "Validated on Saarbruecken Voice Database"
       ],
       link: "https://doi.org/10.1007/978-981-96-5732-2_11"
     },
     {
       title: "Audio Driven Detection of Hate Speech in Telugu: Toward Ethical and Secure CPS",
       venue: "Springer Nature, 2025",
-      desc: "Built a multimodal hate speech detection system for a low-resource language by creating a novel audio-text dataset from real-world YouTube data.",
+      desc: "Built a multimodal hate speech detection system for a low-resource language using audio and text from real-world YouTube data.",
       highlights: [
-        "Created a 2-hour annotated multimodal dataset (audio + text)",
-        "Achieved F1-score of 0.89 using OpenSMILE + SVM for speech classification",
-        "Demonstrated effectiveness of multimodal approaches in low-resource settings"
+        "Created and annotated a multimodal Telugu dataset",
+        "Achieved F1-score of 0.89 with SVM classification",
+        "Demonstrated effectiveness of multimodal learning"
       ],
       link: "https://doi.org/10.1007/978-3-032-09917-4_3"
     },
     {
-      title: "Exploring NTK Kernel and NLP-based Approach for Robust DNA Sequence Classification",
+      title: "Exploring NTK Kernel and NLP-Based Approach for Robust DNA Sequence Classification",
       venue: "Procedia Computer Science, 2025",
-      desc: "Designed an NLP-inspired pipeline for viral DNA classification using k-mer representations and multiple feature extraction techniques.",
+      desc: "Designed an NLP-inspired machine learning pipeline for viral DNA sequence classification using k-mer representations and advanced feature extraction methods.",
       highlights: [
-        "Applied TF-IDF, Bag-of-Words, and Word2Vec for sequence representation",
-        "Developed SVM-NTK model achieving 98% average accuracy",
-        "Demonstrated strong generalization across multiple virus families"
+        "Applied TF-IDF, Bag-of-Words, and Word2Vec for sequences",
+        "Developed SVM-NTK model with 98% accuracy",
+        "Demonstrated strong generalization across virus families"
       ],
       link: "https://doi.org/10.1016/j.procs.2025.04.524"
     }
   ];
 
   return (
-    <section id="research" className="section-padding bg-slate-50/50 relative overflow-hidden">
-      <div className="container relative z-10">
+    <section id="research" className="section-padding bg-white">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center mb-20"
+          className="mb-12"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-text-main">Research & <span className="gradient-text">Publications</span></h2>
-          <p className="text-lg text-text-muted leading-relaxed">
-            My research focuses on multimodal AI, speech processing, and machine learning systems for real-world applications. 
-            I have contributed to multiple peer-reviewed publications covering healthcare AI and low-resource NLP.
+          <p className="text-[#f0a500] font-bold uppercase tracking-[0.2em] text-xs mb-4">Scientific Contributions</p>
+          <h2 className="text-4xl font-extrabold mb-4">Research & Publications</h2>
+          <div className="h-1 w-12 bg-black rounded-full"></div>
+          <p className="mt-8 text-gray-500 text-lg max-w-3xl leading-relaxed">
+            My research focuses on multimodal AI, speech processing, natural language processing, and machine learning systems for real-world applications. I have contributed to peer-reviewed publications across healthcare AI, low-resource NLP, and bioinformatics.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-col gap-10">
           {publications.map((pub, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass-card p-10 group relative overflow-hidden bg-white border-slate-100 hover:shadow-md transition-all"
+              className="group border-b border-gray-100 pb-16 last:border-0"
             >
-              {/* Left Accent Bar */}
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-accent-primary to-accent-secondary opacity-20 group-hover:opacity-100 transition-opacity"></div>
-              
-              <div className="flex flex-col gap-8">
-                {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-50 pb-6">
-                  <div className="flex flex-wrap items-center gap-4">
-                    <span className="px-3 py-1.5 rounded-lg bg-accent-primary/5 text-accent-primary text-[10px] font-bold uppercase tracking-[0.2em] border border-accent-primary/10">
-                      {pub.venue.split(',')[0]}
-                    </span>
-                    <span className="flex items-center gap-2 text-text-dim text-xs font-semibold mono">
-                      <Calendar size={14} className="text-accent-primary" /> {pub.venue.split(',')[1]?.trim() || pub.venue}
-                    </span>
-                  </div>
-
-                  {/* Compact Peer Reviewed Indicator */}
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-100 shadow-sm">
-                    <Award size={14} className="text-accent-primary" />
-                    <span className="text-[9px] font-bold text-text-dim uppercase tracking-[0.1em]">Peer Reviewed</span>
+              <div className="flex flex-col md:flex-row gap-10 items-start">
+                <div className="shrink-0 pt-2">
+                  <div className="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-[#f0a500] group-hover:text-white transition-all shadow-sm">
+                    <BookOpen size={24} />
                   </div>
                 </div>
-
-                <div className="flex flex-col lg:flex-row gap-10">
-                  <div className="lg:w-2/3">
-                    <h3 className="text-2xl font-bold mb-4 text-text-main group-hover:text-accent-primary transition-colors leading-tight">
-                      {pub.title}
-                    </h3>
-                    
-                    <p className="text-text-muted mb-8 italic text-sm border-l-2 border-accent-primary/5 pl-4 py-1">
-                      {pub.desc}
-                    </p>
-
-                    <div className="grid grid-cols-1 gap-4 mb-8">
-                      {pub.highlights.map((highlight, hIndex) => (
-                        <div key={hIndex} className="flex items-start gap-3 text-sm text-text-muted">
-                          <CheckCircle2 size={18} className="text-accent-primary mt-0.5 shrink-0" />
-                          <span className="group-hover:text-text-main transition-colors">{highlight}</span>
-                        </div>
-                      ))}
-                    </div>
+                
+                <div className="flex-grow">
+                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                    <span className="inline-block px-3 py-1 bg-orange-50 text-[11px] font-extrabold text-[#f0a500] uppercase tracking-widest rounded-md">
+                      {pub.venue}
+                    </span>
                   </div>
-
-                  {/* Action Sidebar */}
-                  <div className="lg:w-1/3 flex flex-col justify-end items-start lg:items-end">
+                  
+                  <h3 className="text-2xl font-black mb-6 text-black group-hover:text-[#f0a500] transition-colors leading-tight">
+                    {pub.title}
+                  </h3>
+                  
+                  <p className="text-gray-500 text-[17px] mb-10 leading-relaxed italic border-l-4 border-gray-50 pl-6 py-2 bg-gray-50/30 rounded-r-lg">
+                    {pub.desc}
+                  </p>
+                  
+                  <div className="flex flex-col gap-4 mb-10">
+                    {pub.highlights.map((h, i) => (
+                      <div key={i} className="flex items-start gap-4 text-[15px] text-gray-500 font-medium leading-relaxed">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#f0a500] mt-2.5 shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="pt-4">
                     <a 
                       href={pub.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="btn-primary !py-3 !px-6 !rounded-xl !text-xs !tracking-widest uppercase flex items-center gap-3 w-full lg:w-auto justify-center"
+                      className="inline-flex items-center gap-3 text-[13px] font-black text-black border-b-2 border-black/10 hover:border-[#f0a500] pb-1 transition-all uppercase tracking-[0.2em]"
                     >
-                      Full Paper <ExternalLink size={16} />
+                      Access Publication <ExternalLink size={16} />
                     </a>
                   </div>
                 </div>

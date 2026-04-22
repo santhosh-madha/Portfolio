@@ -1,110 +1,126 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ExternalLink, FolderOpen } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-import { CheckCircle2 } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
       title: "Reinforcement Learning for Autonomous Vehicle Navigation",
       desc: "Developed deep reinforcement learning agents to optimize autonomous navigation in simulated environments with efficient reward design and transfer learning.",
+      tech: ["Python", "PyTorch", "Reinforcement Learning"],
+      github: "https://github.com/santhosh-madha/Reinforcement-Learning-for-Autonomous-Vehicle-Navigation",
       highlights: [
-        "Implemented DQN and DDQN algorithms with reward shaping for efficient navigation",
-        "Improved course completion time by 15% in 2D simulation environments",
-        "Designed reward system with penalties for collisions and time optimization",
-        "Applied transfer learning to improve generalization across new environments"
-      ],
-      tags: ["Python", "PyTorch", "Reinforcement Learning"],
-      link: "https://github.com/santhosh-madha"
+        "Implemented DQN and DDQN algorithms with reward shaping",
+        "Improved course completion time by 15%",
+        "Designed collision-aware reward optimization",
+        "Applied transfer learning for cross-environment generalization"
+      ]
     },
     {
-      title: "Telugu Sentiment Analysis and Emotion Detection",
-      desc: "Built a classification system for a low-resource language using a blend of traditional and deep learning approaches.",
+      title: "Multilingual Transformer-Based Telugu Sentiment Analysis",
+      desc: "Built a complete NLP pipeline for sentiment analysis in a low-resource language using multilingual transformers and custom dataset creation.",
+      tech: ["Python", "Hugging Face", "NLP", "Transformers"],
+      github: "https://github.com/santhosh-madha/telugu-sentiment-dataset",
       highlights: [
-        "Preprocessed large-scale Telugu text data with custom tokenization",
-        "Implemented LSTM and BERT-based models for emotion classification",
-        "Achieved 85% accuracy in 5-class sentiment detection",
-        "Optimized for real-time inference in social media monitoring apps"
-      ],
-      tags: ["NLP", "TensorFlow", "Deep Learning"],
-      link: "https://github.com/santhosh-madha"
+        "Curated and annotated 1,287 Telugu YouTube comments",
+        "Evaluated models including LaBSE, XLM-R, and mBERT",
+        "Achieved F1-score of 0.80 using LaBSE fine-tuning",
+        "Compared transformer models with traditional ML classifiers"
+      ]
     },
     {
-      title: "VRP Optimization with Genetic Algorithms",
-      desc: "Solved complex Vehicle Routing Problems using evolutionary computing to minimize total distance and fleet costs.",
+      title: "Vehicle Routing Problem Optimization for Delivery Services",
+      desc: "Solved a multi-depot vehicle routing problem using optimization techniques and built a web interface for route visualization and delivery planning.",
+      tech: ["Python", "Optimization Algorithms", "Web Development"],
+      github: "https://github.com/santhosh-madha/Vehicle-Routing-Problem-VRP-Optimization-for-Delivery-Services",
       highlights: [
-        "Designed custom mutation and crossover operators for VRP constraints",
-        "Reduced overall delivery distance by 20% compared to greedy baseline",
-        "Implemented path visualization and cost-analysis dashboards",
-        "Developed parallel processing for faster convergence on large graphs"
-      ],
-      tags: ["Python", "Genetic Algorithms", "Optimization"],
-      link: "https://github.com/santhosh-madha"
+        "Implemented exact and heuristic algorithms for distance minimization",
+        "Developed web-based interface for route visualization",
+        "Integrated database workflows for route storage",
+        "Performed clustering-based analysis for depot assignments"
+      ]
     },
     {
-      title: "Big Data Analysis of Superstore Sales",
-      desc: "Engineered scalable data pipelines to analyze regional sales trends and profit drivers using Apache Spark.",
+      title: "Superstore Sales Data Analysis",
+      desc: "Designed a big data analytics pipeline using Apache Spark and MySQL to generate business insights from large-scale retail sales data.",
+      tech: ["Apache Spark", "Scala", "MySQL", "SQL"],
+      github: "https://github.com/santhosh-madha/-Superstore-sales-analysis",
       highlights: [
-        "Processed 1M+ transaction records using Spark SQL and DataFrames",
-        "Identified key profit-influencing factors through statistical modeling",
-        "Built interactive Tableau dashboards for real-time trend monitoring",
-        "Decreased ETL pipeline latency by 40% through partitioning"
-      ],
-      tags: ["Apache Spark", "SQL", "Big Data"],
-      link: "https://github.com/santhosh-madha"
+        "Processed high-volume retail data using Spark SQL",
+        "Analyzed profit trends and discount impact",
+        "Built SQL-based data pipelines for scalable processing",
+        "Generated actionable insights for business decision-making"
+      ]
     }
   ];
 
   return (
-    <section id="projects" className="section-padding bg-white relative overflow-hidden">
-      <div className="container relative z-10">
+    <section id="projects" className="section-padding bg-[var(--bg-secondary)]">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-12"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-text-main">Featured <span className="gradient-text">Projects</span></h2>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
-            A selection of projects demonstrating my experience in building end-to-end AI systems, 
-            machine learning pipelines, and scalable data-driven solutions.
+          <p className="text-[#b8d960] font-bold uppercase tracking-[0.2em] text-xs mb-4">Software & Systems</p>
+          <h2 className="text-4xl font-extrabold mb-4">Featured Projects</h2>
+          <div className="h-1 w-12 bg-black rounded-full"></div>
+          <p className="mt-8 text-gray-500 text-lg max-w-3xl leading-relaxed">
+            A selection of projects demonstrating my experience in building end-to-end AI systems, machine learning pipelines, and scalable data-driven solutions.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="glass-card p-8 group bg-white border-slate-100 hover:border-accent-primary/20 hover:bg-slate-50/50 shadow-sm hover:shadow-md transition-all flex flex-col h-full"
+              transition={{ delay: index * 0.1 }}
+              className="academic-card group flex flex-col h-full"
             >
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-2xl font-bold text-text-main group-hover:text-accent-primary transition-colors leading-tight">{project.title}</h3>
-                <a href={project.link} target="_blank" rel="noreferrer" className="p-3 rounded-xl border border-slate-100 bg-white hover:border-accent-primary hover:text-accent-primary transition-all shadow-sm">
-                  <FaGithub size={20} />
-                </a>
+                <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 text-gray-400 group-hover:text-black transition-colors">
+                  <FolderOpen size={24} />
+                </div>
+                <div className="flex gap-4">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >
+                    <FaGithub size={22} />
+                  </a>
+                </div>
               </div>
 
-              <p className="text-text-muted mb-8 text-sm leading-relaxed border-l-2 border-accent-primary/10 pl-4 bg-slate-50/50 py-3 rounded-r-lg italic">
+              <h3 className="text-xl font-bold mb-4 leading-relaxed group-hover:text-[#b8d960] transition-colors line-clamp-2">
+                {project.title}
+              </h3>
+
+              <p className="text-gray-500 text-[15px] mb-8 leading-relaxed italic border-l-2 border-gray-50 pl-4 py-1">
                 {project.desc}
               </p>
 
-              <ul className="space-y-3 mb-10 flex-grow">
-                {project.highlights.map((item, hIdx) => (
-                  <li key={hIdx} className="flex gap-3 text-[13px] text-text-muted group-hover:text-text-main transition-colors">
-                    <CheckCircle2 size={16} className="text-accent-primary shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mb-8 flex-grow">
+                <ul className="space-y-2">
+                  {project.highlights.map((h, i) => (
+                    <li key={i} className="flex gap-3 text-[13px] text-gray-500">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#b8d960] mt-1.5 shrink-0" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <div className="flex flex-wrap gap-2 pt-8 border-t border-slate-100">
-                {project.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-slate-50 border border-slate-200 rounded-full text-[10px] text-text-dim uppercase tracking-wider font-bold hover:border-accent-primary transition-colors">
-                    {tag}
+              <div className="flex flex-wrap gap-2 pt-6 border-t border-gray-50">
+                {project.tech.map(t => (
+                  <span key={t} className="px-3 py-1 text-[10px] font-bold uppercase tracking-tighter text-gray-400 bg-gray-50 rounded-full">
+                    {t}
                   </span>
                 ))}
               </div>
