@@ -1,16 +1,42 @@
-# React + Vite
+# Santhosh Reddy Madha | AI Researcher & Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, minimalist portfolio built with a focus on academic precision and high-end aesthetics. This project showcases my professional experience, research publications, and software engineering projects in the field of AI and Machine Learning.
 
-Currently, two official plugins are available:
+🚀 **Live Deployment:** [https://portfolio-ten-azure-22.vercel.app/](https://portfolio-ten-azure-22.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
+- **Modern Scholarly Aesthetic**: Minimalist design focused on text clarity and academic impact.
+- **Refined Layout**: Optimized for both high-level summaries and deep-dive technical details.
+- **Experience Timeline**: Vertical card-based professional history for easy readability.
+- **Research Gallery**: Organized publication list with direct links to external DOI sources.
+- **Fully Responsive**: Seamless experience across desktop, tablet, and mobile devices.
 
-## React Compiler
+## 🛠️ Technical Stack
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 8](https://vitejs.dev/) (with Tailwind v4 official plugin)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js (latest LTS recommended)
+- npm or yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/santhosh-madha/Portfolio.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📄 License
+This project is for personal use and portfolio purposes. Feel free to use the structure as inspiration for your own professional identity.
