@@ -40,7 +40,7 @@ const Experience = () => {
           className="mb-12"
         >
           <p className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-2">Background</p>
-          <h2 className="text-5xl font-black mb-6 text-black">Professional Experience</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 text-black">Professional Experience</h2>
           <div className="h-1.5 w-16 bg-black rounded-full"></div>
         </motion.div>
 
@@ -52,7 +52,7 @@ const Experience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-gray-100 rounded-[2rem] p-8 hover:shadow-2xl hover:shadow-gray-100 transition-all duration-500"
+              className="bg-white border border-gray-100 rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 lg:p-12 hover:shadow-2xl hover:shadow-gray-100 transition-all duration-500"
             >
               <div className="flex flex-col md:flex-row gap-10 items-start">
                 {/* Icon Column */}
@@ -64,10 +64,10 @@ const Experience = () => {
                 
                 {/* Content Column */}
                 <div className="flex-grow">
-                  <div className="mb-8">
-                    <h3 className="text-3xl font-black text-black mb-2 tracking-tight">{exp.role}</h3>
-                    <p className="text-xl font-bold text-gray-500 mb-1">{exp.company}</p>
-                    <p className="text-sm font-extrabold text-gray-300 uppercase tracking-widest">{exp.period}</p>
+                  <div className="mb-6 sm:mb-8 text-left">
+                    <h3 className="text-2xl sm:text-3xl font-black text-black mb-2 tracking-tight">{exp.role}</h3>
+                    <p className="text-lg sm:text-xl font-bold text-gray-500 mb-1">{exp.company}</p>
+                    <p className="text-[10px] sm:text-sm font-extrabold text-gray-300 uppercase tracking-widest">{exp.period}</p>
                   </div>
 
                   <p className="text-gray-500 text-lg leading-relaxed mb-8 max-w-4xl">

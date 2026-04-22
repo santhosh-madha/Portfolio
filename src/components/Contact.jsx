@@ -13,7 +13,7 @@ const Contact = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-12">
           <div className="max-w-md">
-            <h2 className="text-3xl font-extrabold mb-6">Let's Connect</h2>
+            <h2 className="text-2xl sm:text-3xl font-black mb-6">Let's Connect</h2>
             <p className="text-gray-500 text-[17px] leading-relaxed">
               I am always open to discussing research collaborations, AI opportunities, or technical challenges. 
               Feel free to reach out via email or connect with me on professional platforms.

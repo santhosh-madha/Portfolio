@@ -50,7 +50,13 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 2rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 2rem;
+  }
 }
 
 .section-padding {
@@ -134,8 +140,9 @@ h2 {
 
 /* Components */
 .profile-image-container {
-  width: 450px;
-  height: 450px;
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid var(--border-light);
@@ -152,9 +159,15 @@ h2 {
 .academic-card {
   background: #fff;
   border: 1px solid #f0f0f0;
-  padding: 2.5rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   transition: var(--transition-fast);
+}
+
+@media (min-width: 640px) {
+  .academic-card {
+    padding: 2.5rem;
+  }
 }
 
 .academic-card:hover {

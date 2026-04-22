@@ -30,7 +30,7 @@ const Education = () => {
           className="mb-12"
         >
           <p className="text-[#818cf8] font-bold uppercase tracking-[0.2em] text-xs mb-4">Academic Background</p>
-          <h2 className="text-4xl font-extrabold mb-4">Education</h2>
+          <h2 className="text-3xl sm:text-4xl font-black mb-4 text-black">Education</h2>
           <div className="h-1 w-12 bg-black rounded-full"></div>
         </motion.div>
 
@@ -45,7 +45,7 @@ const Education = () => {
               className="group border-b border-gray-50 pb-12 last:border-0"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-                <h3 className="text-3xl font-black group-hover:text-[#818cf8] transition-colors">{edu.degree}</h3>
+                <h3 className="text-xl sm:text-3xl font-black group-hover:text-[#818cf8] transition-colors">{edu.degree}</h3>
                 <span className="text-sm font-bold uppercase tracking-[0.2em] text-gray-300">{edu.period}</span>
               </div>
               
@@ -64,7 +64,7 @@ const Education = () => {
                 </div>
               </div>
 
-              <p className="text-gray-500 text-xl leading-relaxed max-w-4xl italic border-l-4 border-gray-50 pl-8 py-2 bg-gray-50/20 rounded-r-lg">
+              <p className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-4xl italic border-l-4 border-gray-50 pl-6 sm:pl-8 py-2 bg-gray-50/20 rounded-r-lg">
                 {edu.desc}
               </p>
             </motion.div>

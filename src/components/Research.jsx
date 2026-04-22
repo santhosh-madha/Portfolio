@@ -49,7 +49,7 @@ const Research = () => {
           className="mb-12"
         >
           <p className="text-[#f0a500] font-bold uppercase tracking-[0.2em] text-xs mb-4">Scientific Contributions</p>
-          <h2 className="text-4xl font-extrabold mb-4">Research & Publications</h2>
+          <h2 className="text-3xl sm:text-4xl font-black mb-4 text-black">Research & Publications</h2>
           <div className="h-1 w-12 bg-black rounded-full"></div>
           <p className="mt-8 text-gray-500 text-lg max-w-3xl leading-relaxed">
             My research focuses on multimodal AI, speech processing, natural language processing, and machine learning systems for real-world applications. I have contributed to peer-reviewed publications across healthcare AI, low-resource NLP, and bioinformatics.
@@ -80,11 +80,11 @@ const Research = () => {
                     </span>
                   </div>
                   
-                  <h3 className="text-2xl font-black mb-6 text-black group-hover:text-[#f0a500] transition-colors leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-black mb-6 text-black group-hover:text-[#f0a500] transition-colors leading-tight">
                     {pub.title}
                   </h3>
                   
-                  <p className="text-gray-500 text-[17px] mb-10 leading-relaxed italic border-l-4 border-gray-50 pl-6 py-2 bg-gray-50/30 rounded-r-lg">
+                  <p className="text-gray-500 text-[15px] sm:text-[17px] mb-8 leading-relaxed italic border-l-4 border-gray-50 pl-6 py-2 bg-gray-50/30 rounded-r-lg">
                     {pub.desc}
                   </p>
                   

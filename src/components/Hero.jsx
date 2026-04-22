@@ -10,16 +10,16 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="section-padding bg-white min-h-[90vh] flex items-center">
+    <section id="home" className="py-12 sm:py-20 lg:py-32 bg-white min-h-[90vh] flex items-center">
       <div className="container">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-32 text-center lg:text-left">
 
           {/* Left: Circular Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/2 flex justify-center"
+            className="w-full lg:w-1/2 flex justify-center"
           >
             <div className="profile-image-container relative">
               <img
@@ -30,21 +30,21 @@ const Hero = () => {
           </motion.div>
 
           {/* Right: Text Content */}
-          <div className="lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h1 className="text-6xl font-black mb-0 tracking-tighter text-black">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-0 tracking-tighter text-black leading-none">
                 Santhosh Reddy Madha
               </h1>
 
-              <div className="mt-8 space-y-4 mb-20">
+              <div className="mt-8 space-y-4 mb-16 lg:mb-24 flex flex-col items-center lg:items-start text-left">
                 {highlights.map((h, i) => (
                   <div key={i} className="flex items-center gap-4 text-black font-bold">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#82d1d1]" />
-                    <span className="text-[18px] tracking-tight">{h.text}</span>
+                    <span className="text-[16px] sm:text-[18px] tracking-tight">{h.text}</span>
                   </div>
                 ))}
               </div>

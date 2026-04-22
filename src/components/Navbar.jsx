@@ -1,8 +1,11 @@
-import React from 'react';
-import { FileText, GraduationCap } from 'lucide-react';
+import React, { useState } from 'react';
+import { FileText, GraduationCap, Menu, X } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const navLinks = [
     { name: 'About me', href: '#home' },
     { name: 'Experience', href: '#experience' },
@@ -12,9 +15,11 @@ const Navbar = () => {
 
   const resumeLink = "https://drive.google.com/drive/folders/196tKZa2_WyOPF8R863YXDoHcbdGlnsHc?usp=sharing";
 
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <nav className="w-full bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
-      <div className="container px-6 py-6 flex flex-col lg:flex-row justify-between items-center gap-8">
+    <nav className="w-full bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+      <div className="container px-6 py-4 flex flex-row justify-between items-center relative">
         
         {/* Left Side: Identity */}
         <div className="flex items-center gap-4">
@@ -23,20 +28,20 @@ const Navbar = () => {
             <a href="#" className="text-[20px] font-extrabold tracking-tight text-black hover:opacity-70 transition-opacity">
               Santhosh
             </a>
-            <span className="text-[13px] text-gray-500 font-normal hidden xl:block">
+            <span className="text-[13px] text-gray-500 font-normal hidden sm:block">
               AI Researcher & Engineer
             </span>
           </div>
         </div>
 
-        {/* Right Side: Navigation & Actions */}
-        <div className="flex flex-wrap justify-center items-center gap-10">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-10">
           <div className="flex items-center gap-10">
             {navLinks.map((link) => (
               <a 
                 key={link.name}
                 href={link.href}
-                className="text-[14px] font-bold text-gray-400 hover:text-black transition-all uppercase tracking-widest"
+                className="text-[13px] font-bold text-gray-400 hover:text-black transition-all uppercase tracking-widest"
               >
                 {link.name}
               </a>
@@ -48,7 +53,7 @@ const Navbar = () => {
               href={resumeLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-[12px] font-black text-black border-2 border-black/10 px-6 py-2.5 rounded-full hover:bg-black hover:text-white hover:border-black transition-all group uppercase tracking-widest"
+              className="flex items-center gap-2 text-[11px] font-black text-black border-2 border-black/10 px-5 py-2 rounded-full hover:bg-black hover:text-white hover:border-black transition-all group uppercase tracking-widest"
             >
               Resume <FileText size={14} className="group-hover:scale-110 transition-transform" />
             </a>
@@ -65,6 +70,63 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="lg:hidden p-2 text-black"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        {/* Mobile slide-down Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 lg:hidden overflow-hidden shadow-xl"
+            >
+              <div className="flex flex-col p-8 gap-6">
+                {navLinks.map((link) => (
+                  <a 
+                    key={link.name}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="text-lg font-bold text-gray-500 hover:text-black transition-all uppercase tracking-widest"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                <div className="pt-6 border-t border-gray-50 flex flex-col gap-6">
+                  <a 
+                    href={resumeLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={closeMenu}
+                    className="flex items-center justify-center gap-3 text-sm font-black text-white bg-black px-6 py-4 rounded-xl uppercase tracking-widest"
+                  >
+                    Download Resume <FileText size={18} />
+                  </a>
+                  <div className="flex items-center justify-center gap-10 pt-4">
+                    <a href="https://scholar.google.com/citations?user=ZDOys8UAAAAJ&hl=en&authuser=6" className="text-gray-400 hover:text-black scale-125">
+                      <GraduationCap size={24} />
+                    </a>
+                    <a href="https://github.com/santhosh-madha" className="text-gray-400 hover:text-black scale-125">
+                      <FaGithub size={24} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/santhosh-madha/" className="text-gray-400 hover:text-black scale-125">
+                      <FaLinkedin size={24} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

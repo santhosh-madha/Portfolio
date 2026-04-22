@@ -65,7 +65,7 @@ const Projects = () => {
           className="mb-12"
         >
           <p className="text-[#b8d960] font-bold uppercase tracking-[0.2em] text-xs mb-4">Software & Systems</p>
-          <h2 className="text-4xl font-extrabold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl sm:text-4xl font-black mb-4 text-black">Featured Projects</h2>
           <div className="h-1 w-12 bg-black rounded-full"></div>
           <p className="mt-8 text-gray-500 text-lg max-w-3xl leading-relaxed">
             A selection of projects demonstrating my experience in building end-to-end AI systems, machine learning pipelines, and scalable data-driven solutions.
@@ -98,7 +98,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold mb-4 leading-relaxed group-hover:text-[#b8d960] transition-colors line-clamp-2">
+              <h3 className="text-lg sm:text-xl font-bold mb-4 leading-relaxed group-hover:text-[#b8d960] transition-colors line-clamp-2">
                 {project.title}
               </h3>
 
