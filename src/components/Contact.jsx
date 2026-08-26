@@ -22,13 +22,13 @@ const Contact = () => {
           
           <div className="flex flex-col gap-6">
             <a 
-              href="mailto:smadha@buffalo.edu" 
+              href="mailto:santhoshk.madha@gmail.com" 
               className="group flex items-center gap-4 text-black hover:text-[#818cf8] transition-colors"
             >
               <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-[#818cf8]/10">
                 <Mail size={18} />
               </div>
-              <span className="font-bold tracking-tight">smadha@buffalo.edu</span>
+              <span className="font-bold tracking-tight">santhoshk.madha@gmail.com</span>
             </a>
             
             <div className="flex items-center gap-4 text-gray-400">

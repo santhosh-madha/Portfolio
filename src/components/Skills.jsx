@@ -4,28 +4,28 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   const skillCategories = [
     {
-      title: "AI & Machine Learning",
-      skills: ["Machine Learning", "Deep Learning", "Neural Networks", "NLP", "Computer Vision", "Multimodal Learning", "Reinforcement Learning", "Generative AI", "LLMs", "Model Optimization", "Predictive Analytics", "Statistical Modeling"]
+      title: "Languages",
+      skills: ["Python", "SQL", "Java", "Bash"]
     },
     {
-      title: "Programming & Data",
-      skills: ["Python", "Java", "SQL", "Scala", "Data Analysis", "Data Preprocessing", "Feature Engineering", "Data Cleaning", "Data Visualization", "Exploratory Data Analysis", "Data Scraping", "Statistical Analysis"]
+      title: "AI/ML",
+      skills: ["Machine Learning", "Deep Learning", "LLMs", "Generative AI", "NLP", "Computer Vision", "Multimodal AI", "Reinforcement Learning"]
     },
     {
-      title: "Frameworks & Libraries",
-      skills: ["PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", "OpenCV", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Apache Spark MLlib"]
+      title: "GenAI",
+      skills: ["Prompt Engineering", "RAG", "AI Agents", "Embeddings", "Vector Databases (FAISS, ChromaDB)", "LangChain", "LangGraph"]
     },
     {
-      title: "Tools & Platforms",
-      skills: ["AWS", "Docker", "Git", "GitHub", "Linux", "Jupyter Notebook", "VS Code", "Databricks", "Google Colab"]
+      title: "Frameworks",
+      skills: ["PyTorch", "TensorFlow", "Hugging Face", "Scikit-learn", "FastAPI", "Streamlit"]
     },
     {
-      title: "Data Engineering & Big Data",
-      skills: ["Apache Spark", "ETL Pipelines", "Data Pipelines", "Database Management", "MySQL", "PostgreSQL", "Data Warehousing", "Delta Lake", "Big Data Processing"]
+      title: "Tools and Cloud",
+      skills: ["Docker", "MLflow", "Git", "GitHub Actions", "AWS", "Linux", "CI/CD"]
     },
     {
-      title: "Deployment & MLOps",
-      skills: ["FastAPI", "REST APIs", "Streamlit", "Model Deployment", "Containerization", "CI/CD (Basics)", "API Development", "Workflow Automation"]
+      title: "Databases",
+      skills: ["MySQL", "PostgreSQL"]
     }
   ];
 
