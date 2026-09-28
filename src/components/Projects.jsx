@@ -6,6 +6,19 @@ import { FaGithub } from 'react-icons/fa';
 const Projects = () => {
   const projects = [
     {
+      title: "Healthcare Knowledge Assistant — RAG",
+      desc: "Built a local educational RAG application that answers questions from CDC and MedQuAD documents with evidence quotes and original source links.",
+      tech: ["Python", "Sentence Transformers", "FAISS", "BM25", "Llama 3.1", "Ollama"],
+      github: "https://github.com/santhosh-madha/healthcare-rag-assistant",
+      demo: "https://github.com/santhosh-madha/healthcare-rag-assistant/blob/main/docs/demo.md",
+      highlights: [
+        "Processed 500 MedQuAD answer records into 1,020 chunks with source metadata",
+        "Combined semantic search and BM25 using reciprocal rank fusion",
+        "Retrieved the expected record in the top 3 for 28/30 sampled questions; a retrieval check, not answer accuracy",
+        "Added structured generation, source-label and quote checks, and a web collection selector"
+      ]
+    },
+    {
       title: "Reinforcement Learning for Autonomous Vehicle Navigation",
       desc: "Developed deep reinforcement learning agents to optimize autonomous navigation in simulated environments with efficient reward design and transfer learning.",
       tech: ["Python", "PyTorch", "Reinforcement Learning"],
@@ -86,9 +99,21 @@ const Projects = () => {
                 <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 text-gray-400 group-hover:text-black transition-colors">
                   <FolderOpen size={24} />
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-center">
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-gray-500 hover:text-black transition-colors"
+                      aria-label={`View the demo guide for ${project.title}`}
+                    >
+                      Demo guide <ExternalLink size={16} />
+                    </a>
+                  )}
                   <a 
-                    href={project.github} 
+                    href={project.github}
+                    aria-label={`View ${project.title} on GitHub`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-black transition-colors"
