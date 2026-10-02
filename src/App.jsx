@@ -6,6 +6,8 @@ import ragScreenshot from './assets/rag-answer.png';
 
 const github = 'https://github.com/santhosh-madha';
 const rag = `${github}/healthcare-rag-assistant`;
+const delivery = `${github}/delivery-intelligence-platform`;
+const deliveryDemo = 'https://delivery-intelligence-api-2z5u.onrender.com/docs';
 const resume = 'https://drive.google.com/drive/folders/196tKZa2_WyOPF8R863YXDoHcbdGlnsHc?usp=sharing';
 const email = 'santhoshk.madha@gmail.com';
 
@@ -79,15 +81,46 @@ function RagCaseStudy() {
   </article>;
 }
 
+function DeliveryCaseStudy() {
+  return <article className="feature-project delivery-project" aria-labelledby="delivery-title">
+    <div className="feature-top">
+      <div className="feature-copy">
+        <div className="project-kicker"><span className="project-number">02</span> FEATURED BUILD <span className="project-type">DEPLOYED ML API</span></div>
+        <h3 id="delivery-title">From delivery data<br /><span>to a working API.</span></h3>
+        <p className="project-name">Delivery Intelligence & ETA Reliability</p>
+        <p>I built an application that predicts delivery duration at courier acceptance, saves each prediction, and records actual arrival times to measure error.</p>
+        <div className="tags">{['CatBoost', 'FastAPI', 'PostgreSQL', 'Docker', 'MLflow', 'GitHub Actions'].map(t => <span key={t}>{t}</span>)}</div>
+        <div className="feature-links"><External href={delivery} className="text-link"><Github size={17} />Explore the code</External><External href={deliveryDemo} className="text-link">Live API docs</External></div>
+        <p className="demo-access">Prediction requests need an API key. <a href={`mailto:${email}?subject=Delivery%20ETA%20demo%20access`}>Ask me for demo access</a>. Free hosting may take a moment to wake up.</p>
+      </div>
+      <div className="delivery-result" aria-label="Verified cloud demo result">
+        <p className="eyebrow">VERIFIED CLOUD DEMO · OCT 2026</p>
+        <h4>Predict. Store. Measure.</h4>
+        <dl><div><dt>Predicted duration</dt><dd>32.26 <span>min</span></dd></div><div><dt>Simulated actual duration</dt><dd>35.00 <span>min</span></dd></div><div><dt>Absolute error</dt><dd>2.74 <span>min</span></dd></div></dl>
+        <p>Render API → CatBoost → Neon PostgreSQL</p>
+        <p>Prediction and outcome saved with the same ID. This synthetic example verifies the application flow, not real-world accuracy.</p>
+      </div>
+    </div>
+    <div className="project-metrics"><div><strong>6.73 min</strong><span>CatBoost validation MAE</span></div><div><strong>274,461</strong><span>Validation orders across four time splits</span></div><div><strong>3 models</strong><span>Ridge, random forest, and CatBoost</span></div></div>
+    <p className="metric-context">Historical development evaluation, not an untouched final holdout. A training-median baseline was also included.</p>
+    <details className="case-study"><summary><span>Inside the build <span className="summary-hint">Model selection, deployment & limitations</span></span><span className="expand-icon" aria-hidden="true">+</span></summary><div className="case-study-body">
+      <div className="case-columns"><div><h4>Why CatBoost?</h4><p>I compared models using the same features and chronological splits. CatBoost had the lowest MAE on all four days: 6.73 minutes overall, versus 6.83 for Ridge and 7.17 for random forest. The advantage over Ridge is modest; Ridge trains faster and performs better on unseen couriers.</p></div><div><h4>Beyond the notebook</h4><p>Shared feature code connects training and inference. The Docker image verifies the saved model’s checksum, FastAPI validates requests, and PostgreSQL stores predictions and outcomes. I tested the deployed flow and confirmed requests without an API key are rejected.</p></div></div>
+      <div className="case-columns"><div><h4>Testing and deployment</h4><p>GitHub Actions runs Python and PostgreSQL integration tests and a local Docker build check. Render hosts the API and Neon hosts the database. MLflow tracks experiments locally; delivery outcomes support later performance reports.</p></div><div><h4>What this demonstrates</h4><p>A deployed educational ML system for on-demand orders, from model comparison to outcome tracking. Demo records are excluded from real-performance reports. Live accuracy, sustained cloud load, and automatic retraining are not established.</p></div></div>
+      <External href={`${delivery}/blob/main/docs/model_comparison.md`} className="text-link">Read the model comparison</External>
+    </div></details>
+  </article>;
+}
+
 const projects = [
-  { num: '02', category: 'REINFORCEMENT LEARNING', title: 'Learning to navigate.', name: 'Autonomous Vehicle Navigation', description: 'DQN and DDQN agents for simulated navigation, with collision-aware rewards and transfer learning across environments.', evidence: 'Reported 15% improvement in course completion time', tags: ['PyTorch', 'DQN / DDQN', 'Reward shaping'], url: `${github}/Reinforcement-Learning-for-Autonomous-Vehicle-Navigation`, details: 'Implemented and compared deep reinforcement learning agents, shaped rewards around progress and collisions, and explored transfer to another environment. The reported result is a project-specific simulation outcome, not a real-world driving benchmark.' },
-  { num: '03', category: 'LOW-RESOURCE NLP', title: 'Language deserves context.', name: 'Telugu Sentiment Analysis', description: 'A sentiment analysis pipeline built around Telugu YouTube comments, dataset annotation, and multilingual model comparisons.', evidence: '1,287 annotated comments · Reported LaBSE F1: 0.80', tags: ['Hugging Face', 'LaBSE', 'XLM-R / mBERT'], url: `${github}/telugu-sentiment-dataset`, details: 'Curated and annotated the dataset, evaluated LaBSE, XLM-R and mBERT, and compared transformer approaches with traditional machine learning classifiers. The reported F1 is specific to this project’s evaluation.' },
+  { num: '03', category: 'REINFORCEMENT LEARNING', title: 'Learning to navigate.', name: 'Autonomous Vehicle Navigation', description: 'DQN and DDQN agents for simulated navigation, with collision-aware rewards and transfer learning across environments.', evidence: 'Reported 15% improvement in course completion time', tags: ['PyTorch', 'DQN / DDQN', 'Reward shaping'], url: `${github}/Reinforcement-Learning-for-Autonomous-Vehicle-Navigation`, details: 'Implemented and compared deep reinforcement learning agents, shaped rewards around progress and collisions, and explored transfer to another environment. The reported result is a project-specific simulation outcome, not a real-world driving benchmark.' },
+  { num: '04', category: 'LOW-RESOURCE NLP', title: 'Language deserves context.', name: 'Telugu Sentiment Analysis', description: 'A sentiment analysis pipeline built around Telugu YouTube comments, dataset annotation, and multilingual model comparisons.', evidence: '1,287 annotated comments · Reported LaBSE F1: 0.80', tags: ['Hugging Face', 'LaBSE', 'XLM-R / mBERT'], url: `${github}/telugu-sentiment-dataset`, details: 'Curated and annotated the dataset, evaluated LaBSE, XLM-R and mBERT, and compared transformer approaches with traditional machine learning classifiers. The reported F1 is specific to this project’s evaluation.' },
 ];
 
 function Projects() {
   return <section id="projects" className="work-section section-pad"><div className="shell">
     <SectionHeading number="02" label="SELECTED WORK" title="Built to answer real questions.">A closer look at the systems I build, the decisions behind them, and how I evaluate the results.</SectionHeading>
     <RagCaseStudy />
+    <DeliveryCaseStudy />
     <div className="project-grid">{projects.map(p => <article className="secondary-project" key={p.num}><div className="project-kicker"><span className="project-number">{p.num}</span>{p.category}</div><h3>{p.title}</h3><p className="project-name">{p.name}</p><p>{p.description}</p><div className="project-evidence">{p.evidence}</div><div className="tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div><details className="small-details"><summary>Approach & evaluation <span aria-hidden="true">+</span></summary><p>{p.details}</p></details><External href={p.url} className="text-link"><Github size={17} />View project</External></article>)}</div>
     <div className="more-work"><span>ALSO BUILT</span><External href={`${github}/Vehicle-Routing-Problem-VRP-Optimization-for-Delivery-Services`}>Delivery route optimization</External><External href={`${github}/-Superstore-sales-analysis`}>Retail analytics with Spark & SQL</External></div>
   </div></section>;
